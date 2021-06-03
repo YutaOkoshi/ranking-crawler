@@ -56,7 +56,7 @@ class Ranking:
         if env.IS_PRD:
             filename = '/tmp/' + filename
 
-        now = datetime.now()
+        now = datetime.now(env.JST)
 
         blob = bucket.blob('{}/{}/{}/{}/{}.csv'.format(
             now.year, now.month, now.day, now.hour, Ranking.category))

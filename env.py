@@ -1,3 +1,4 @@
+from datetime import timedelta, timezone
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
@@ -15,6 +16,8 @@ load_dotenv(verbose=True)
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
+
+JST = timezone(timedelta(hours=+9), 'JST')
 
 #------------ スプレットシート周り
 SPREADSHEET_NAME = os.environ.get('SPREADSHEET_NAME')

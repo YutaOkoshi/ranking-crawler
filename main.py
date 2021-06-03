@@ -38,7 +38,7 @@ def getTargetCategory():
 def updateTargetCategory(category: str):
     MainSheet = SpreadSheet.worksheet(env.MAINSHEET_NAME)
     cell = MainSheet.find(query=category, in_row=0)
-    now = datetime.now().strftime('%Y/%m/%d %H:%M:%S')
+    now = datetime.now(env.JST).strftime('%Y/%m/%d %H:%M:%S')
     # E列が「データの最終更新日時」の前提
     MainSheet.update_cell(cell.address[1:], 5, now)
     pass

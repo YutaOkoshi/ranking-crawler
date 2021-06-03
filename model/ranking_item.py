@@ -40,8 +40,7 @@ class RankingItem:
         if not self.isTweet:
             return False
         # １日以上過去の更新はツイートしない
-        lastday = datetime.now(
-            timezone(timedelta(hours=+9), 'JST')) + timedelta(days=-1)
+        lastday = datetime.now(env.JST) + timedelta(days=-1)
         if self.published < lastday:
             return False
         if self.lastUpdate == None \
