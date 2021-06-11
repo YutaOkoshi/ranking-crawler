@@ -2,6 +2,9 @@ ranking-crawler
 
 # for developer
 
+![Untitled (2)](https://user-images.githubusercontent.com/37532269/121746883-87683b80-cb41-11eb-9e18-5cb1373d14a1.png)
+
+
 ## ! Prerequisite !
 
 - Register with twitter developer to create an app and get a key and token.
