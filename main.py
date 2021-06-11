@@ -20,7 +20,7 @@ GspreadClient = gspread.authorize(Credentials)
 SpreadSheet = GspreadClient.open(env.SPREADSHEET_NAME)
 
 
-def getTargetCategory():
+def getTargetCategory() -> list[Category]:
     MainSheet = SpreadSheet.worksheet(env.MAINSHEET_NAME)
     MainList = MainSheet.get_all_values()
     MainList.pop(0)
@@ -49,6 +49,11 @@ def main(event, context):
     categories = getTargetCategory()
 
     for category in categories:
+
+        if not category.shouldCrawl():
+            print("{} is not target".format(category))
+            continue
+
         ranking = crawl(str(category))
         ranking.toCsv()
         # if env.IS_PRD:

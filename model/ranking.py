@@ -33,7 +33,7 @@ class Ranking:
         with open(filename, 'w', newline='') as f:
             w = csv.writer(f, quoting=csv.QUOTE_ALL)
             header = ['rank', 'asin_isbn', 'title', 'star',
-                      'reviewer', 'affUrl', 'path']
+                      'reviewer', 'price_zone', 'affUrl', 'path']
             w.writerow(header)
             for item in self.getItem():
                 w.writerow([
@@ -42,6 +42,7 @@ class Ranking:
                     item.title,
                     item.star,
                     item.reviewer,
+                    item.price_zone,
                     item.affUrl,
                     item.path,
                 ])

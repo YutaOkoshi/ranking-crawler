@@ -19,14 +19,17 @@ class RankingItem:
             'span > div.a-icon-row.a-spacing-none > a:nth-child(1)')).strip()
         self.reviewer = self.getText(tag.select_one(
             'span > div.a-icon-row.a-spacing-none > a:nth-child(2)')).strip()
+        self.price_zone = self.getText(tag.select_one(
+            'span > div.a-row > a > span')).strip()
         self.asin_isbn = re.search(
             r'\/dp\/.{10}', self.path).group()[4:]
+
 
         self.affUrl = "https://www.amazon.co.jp/dp/" + \
             self.asin_isbn+"/ref=nosim?tag=" + env.AFF_TAG
 
-        # 文字数制限140文字なのでそれを超えないように大体50文字にtitleを丸める
-        self.title = self.title[0:50]
+        # 文字数制限140文字なのでそれを超えないように大体40文字にtitleを丸める
+        self.title = self.title[0:40]
 
     def __str__(self):
         return self.title
