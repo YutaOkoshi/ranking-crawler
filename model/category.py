@@ -33,7 +33,7 @@ class Category:
         return str(self.category_id)
 
     def shouldCrawl(self) -> bool:
-        if self.crawl_duration is 0:
+        if self.crawl_duration == 0:
             return False
         if self.last_update is None:
             return True
