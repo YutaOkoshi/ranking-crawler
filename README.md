@@ -11,6 +11,10 @@ ranking-crawler
   - https://developer.twitter.com/en/portal/dashboard
 - Create a GCP service account with editing permissions and download secure.json
   - https://console.cloud.google.com/iam-admin/serviceaccounts
+- enable gcp api
+  - Spread Sheet API
+  - Cloud Build API
+  - Google Drive API 
 
 ## initial setup
 ```
